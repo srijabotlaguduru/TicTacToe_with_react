@@ -1,16 +1,20 @@
 import Player from "./Player";
-export default function Players({ active }) {
+import { PLAYERS } from "../initial-players";
+
+export default function Players({ active, onNameChange }) {
   return (
     <ol id="players" className="highlight-player">
       <Player
-        initialPlayer="Player-1"
+        initialPlayer={PLAYERS.X}
         symbol="X"
         isActive={active === "X"}
+        onChangeName={onNameChange}
       />
       <Player
-        initialPlayer="Player-2"
+        initialPlayer={PLAYERS.O}
         symbol="O"
         isActive={active === "O"}
+        onChangeName={onNameChange}
       />
     </ol>
   );
